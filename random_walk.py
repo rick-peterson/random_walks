@@ -2,17 +2,11 @@ import random
 
 
 def random_walks(n):
-    x = 0
-    y = 0
-    l = -1
-    r = 1
-    u = 1
-    d = -1
+    x, y = 0, 0
     for i in range(n):
-        step = random.choice([l, r, u, d])
-        x += step
-        step = random.choice([l, r, u, d])
-        y += step
+        dx, dy = random.choice([(-1, 0), (1, 0), (0, 1), (0, -1)])
+        x += dx
+        y += dy
     return (x, y)
 
 
