@@ -8,11 +8,12 @@ def random_walks(n):
     r = 1
     u = 1
     d = -1
-    step = random.choice([l, r, u, d])
     for i in range(n):
+        step = random.choice([l, r, u, d])
         x += step
+        step = random.choice([l, r, u, d])
         y += step
-        return (x, y)
+    return (x, y)
 
 
 print(random_walks(10))
