@@ -7,7 +7,23 @@ def random_walks(n):
         dx, dy = random.choice([(-1, 0), (1, 0), (0, 1), (0, -1)])
         x += dx
         y += dy
-    return (x, y)
+    d = abs(x) + abs(y)
+    #print((x, y), f"The distance from home is: {d}")
+    return d
 
 
-print(random_walks(10))
+tries = 100
+
+
+def percentage(attempts):
+    for i in range(attempts):
+        num = 0
+        for n in range(1, 31):
+            d = random_walks(n)
+            if d <= 4:
+                num += 1
+                print(f"For {n} steps the distance is {d}")
+    print(f"Percentage = {num/attempts}")
+
+
+percentage(tries)
