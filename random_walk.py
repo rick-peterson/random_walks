@@ -16,14 +16,13 @@ tries = 100
 
 
 def percentage(attempts):
-    for i in range(attempts):
+    for i in range(1, 31):
         num = 0
-        for n in range(1, 31):
-            d = random_walks(n)
+        for n in range(attempts):
+            d = random_walks(i)
             if d <= 4:
                 num += 1
-                print(f"For {n} steps the distance is {d}")
-    print(f"Percentage = {num/attempts}")
+        print(f"For {i} steps: Percentage = {float((num/attempts)*100)} %")
 
 
 percentage(tries)
